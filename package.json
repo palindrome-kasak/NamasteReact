@@ -4,6 +4,8 @@
   "description": "this is namsate react lecture practice",
  
   "scripts": {
+    "start":"parcel index.html" ,
+    "build":"parcel build index.html",
     "test": "jest"
   },
   "keywords": [],
