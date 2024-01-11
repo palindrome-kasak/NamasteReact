@@ -1,22 +1,61 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 
-// React element==> object
 
-const jsxHeading = <h1 id="heading"> namste using jsx</h1>
 
-// React functional compenent
-const Title =()=>{
-    <h1 className="head">i am girl</h1>
-};
-const HeadingComp = ()=>(
-    <div id="jd"> 
-    <Title/>
-     <h1 className="hjgd">namste funcyional component</h1>;
-     </div>
-);
 
-const heading = React.createElement("h1", { id: "heading" }, "Namsate React tom");
+
+const Header =()=>{
+    return(
+        <div className="header">
+            <div className="logo-container">
+                <img className="logo " src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3R11bv0hEzlRnv0lyOdGNCL3zE8HsFWElfjwU9NOIkw&s"/>
+            </div>
+            <div className="nav-items">
+                <ul>
+                    <li>Home</li>
+                    <li>About Us</li>
+                    <li>Contact Us</li>
+                    <li>Cart</li>
+                </ul>
+            </div>
+        </div>
+    )
+}
+// resturant container
+const ResturantCard =()=>{
+    return(
+        <div className="res-card">
+            <img alt="res-logo" className="res-logo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSb9Ntx-Vo3iw2gJFXW3C_jF-Isqeyl-lKXAyrMb7htFnYT2qy221lKfjAESQ0C0B_j2Bo&usqp=CAU"/>
+            <h3> 7th Heaven </h3>
+        </div>
+    )
+}
+
+const Body =()=>{
+    return (
+        <div className="body">
+            <div className="search">search</div>
+            <div className="res-container">
+                {/* resturant card */}
+                <ResturantCard/>
+                <ResturantCard/>
+                <ResturantCard/>
+            </div>
+
+        </div>
+    )
+}
+
+const AppLayout = ()=>{
+    return (
+     <div className="app">
+        <Header/>
+        <Body/>
+    </div>
+    )
+}
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<HeadingComp/>);
+root.render(<AppLayout/>);
 
