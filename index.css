@@ -18,19 +18,30 @@
 }
 .res-card{
     width: 200px;
-    height: 300px;
     border: 1px solid black;
     background-color: antiquewhite;
     padding: 5px ;
+    margin: auto;
+}
+.res-card:hover {
+    border: 1px solid black;
+    cursor: pointer;
 }
 .search{
     padding: 10px;
 }
 .res-logo{
-   
     width: 100%;
 }
 .res-container{
     display: flex;
-    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 20px;
+    margin: 20px;
 }
+.nav-items{
+    padding: 10px;
+    margin: 12px;
+    border: 1px solid black;
+}
+
