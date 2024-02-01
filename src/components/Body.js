@@ -17,10 +17,10 @@ const Body = () => {
     const jsonData = await data.json();
     console.log(jsonData);
     console.log("done");
-    setlistOfRes(jsonData?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+    setlistOfRes(jsonData?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
   }
-
-  return listOfRes.length==0?<ShimmerUI/>:(
+console.log(listOfRes)
+  return listOfRes.length===0?<ShimmerUI/>:(
     <div className="body">
       {/* <div className="search">search</div> */}
       <div className="btn-div">

@@ -15,6 +15,7 @@ const ShimmerUI = () => {
         <div className='ShimmerUI-card'></div>
         <div className='ShimmerUI-card'></div>
         <div className='ShimmerUI-card'></div>
+        <div className='ShimmerUI-card'></div>
     </div>
 
   )
