@@ -17,7 +17,7 @@ const Body = () => {
     const jsonData = await data.json();
     console.log(jsonData);
     console.log("done");
-    setlistOfRes(jsonData?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+    setlistOfRes(jsonData?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
   }
 console.log(listOfRes)
   return listOfRes.length===0?<ShimmerUI/>:(
