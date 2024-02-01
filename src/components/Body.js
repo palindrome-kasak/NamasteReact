@@ -1,12 +1,13 @@
 import ResturantCard from "./ResturantCard";
-import resObj from '../utils/mockData'
+import ShimmerUI from './ShimmerUI'
 import { useState, useEffect } from "react";
+
 
 // super powerfull variable , react hook use State => it is a normal javascipt fucntion which is given to us by React => local state variable
 
 const Body = () => {
   
-  const [listOfRes, setlistOfRes] = useState(resObj);
+  const [listOfRes, setlistOfRes] = useState([]);
 
   useEffect(()=>{
     fetchData();
@@ -16,10 +17,10 @@ const Body = () => {
     const jsonData = await data.json();
     console.log(jsonData);
     console.log("done");
-    setlistOfRes(jsonData.data.cards[1].card.card.gridElements.infoWithStyle.restaurants);
+    setlistOfRes(jsonData?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
   }
-  
-  return (
+
+  return listOfRes.length==0?<ShimmerUI/>:(
     <div className="body">
       {/* <div className="search">search</div> */}
       <div className="btn-div">
