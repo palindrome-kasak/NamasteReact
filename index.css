@@ -71,3 +71,11 @@
     height: 1%;
     cursor: pointer;
 }
+.searchBox{
+    padding: 10px;
+    margin: 10px;
+}
+.searchBtn{
+    cursor: pointer;
+    margin-left: 8px;
+}
