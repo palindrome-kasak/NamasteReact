@@ -1,6 +1,7 @@
 import ResturantCard from "./ResturantCard";
 import ShimmerUI from "./ShimmerUI";
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 // super powerfull variable , react hook use State => it is a normal javascipt fucntion which is given to us by React => local state variable
 
@@ -46,8 +47,8 @@ const Body = () => {
         <button
           className="searchBtn"
           onClick={() => {
-            const FilteredSearchRes = listOfRes.filter(
-              (res) =>res.info.name.toLowerCase().includes(searchText.toLowerCase())
+            const FilteredSearchRes = listOfRes.filter((res) =>
+              res.info.name.toLowerCase().includes(searchText.toLowerCase())
             );
             setFileterlistOfRes(FilteredSearchRes);
           }}
@@ -72,7 +73,9 @@ const Body = () => {
       <div className="res-container">
         {/* resturant card */}
         {FileterlistOfRes.map((restur) => (
-          <ResturantCard key={restur.info.id} resData={restur} />
+          <Link key={restur.info.id} to={"/res/" + restur.info.id}>
+            <ResturantCard resData={restur} />
+          </Link>
         ))}
       </div>
     </div>
