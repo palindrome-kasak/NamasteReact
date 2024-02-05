@@ -5,7 +5,7 @@ import { useParams } from "react-router-dom";
 import { MENU_API } from "../utils/constants";
 
 const ResMenu = () => {
-  console.log("1");
+  console.log("12");
   const [ResMenu, setResMenu] = useState(null);
   const { resId } = useParams();
   console.log(resId);
