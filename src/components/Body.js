@@ -2,6 +2,7 @@ import ResturantCard from "./ResturantCard";
 import ShimmerUI from "./ShimmerUI";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import useOnlineStatus from "../utils/useOnlineStatus";
 
 // super powerfull variable , react hook use State => it is a normal javascipt fucntion which is given to us by React => local state variable
 
@@ -31,6 +32,13 @@ const Body = () => {
     );
   };
   console.log(listOfRes);
+
+  const useOnlineStatusValue = useOnlineStatus();
+  if (useOnlineStatusValue === false) {
+    return <div>
+      <h1>you are offline!!!!!!!!!!!!!</h1>
+    </div>
+  };
   return listOfRes.length === 0 ? (
     <ShimmerUI />
   ) : (
