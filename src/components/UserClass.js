@@ -7,10 +7,10 @@ class UserClass extends React.Component {
         this.state={
           count:0,
         }
-        console.log("child constructor");
+        console.log(this.props.name +"child constructor");
     }
     componentDidMount(){
-      console.log("child didmount")
+      console.log(this.props.name+"child didmount")
   }
   render() {
     return (
@@ -23,10 +23,7 @@ class UserClass extends React.Component {
             {count:this.state.count+1,}
           );
         }}>count Increaee</button>
-
-        <h2> location: frz</h2>
-        <h3>comp: CSG</h3>
-        {console.log("child render")}
+        {console.log(this.props.name+"child render")}
       </div>
     );
   }
