@@ -6,10 +6,10 @@ class AboutUs extends React.Component{
     
     constructor(props){
         super(props)
-        console.log("Parent constructor");
+        // console.log("Parent constructor");
     }
-    componentDidMount(){
-        console.log("parent didmount")
+     componentDidMount(){
+       
     }
     render(){
         console.log("parent render ");

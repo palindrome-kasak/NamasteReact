@@ -5,25 +5,32 @@ class UserClass extends React.Component {
     constructor(props){
         super(props)
         this.state={
-          count:0,
+            userInfo:{
+              name:"dummy",
+              avatar_url:"htthsfjnks"
+            }
         }
-        console.log(this.props.name +"child constructor");
+        // console.log(this.props.name +"child constructor");
     }
-    componentDidMount(){
-      console.log(this.props.name+"child didmount")
+    async componentDidMount(){
+      const data = await fetch("https://api.github.com/users/palindrome-kasak");
+       const jsonData = await data.json();
+       this.setState({
+        userInfo:jsonData,
+       });
+       console.log(jsonData);
+  }
+  componentDidUpdate(){
+    console.log("componentDidUpdate");
   }
   render() {
     return (
       
       <div>
-        <h2>{this.props.name}</h2>
-        <h3>count={this.state.count}</h3>
-        <button onClick={()=>{
-          this.setState(
-            {count:this.state.count+1,}
-          );
-        }}>count Increaee</button>
-        {console.log(this.props.name+"child render")}
+        {/* <img src={this.state.userInfo.avatar_url}/> */}
+        <h2>{this.state.userInfo.name}</h2>
+        
+        {/* {console.log(this.props.name+"child render")} */}
       </div>
     );
   }
