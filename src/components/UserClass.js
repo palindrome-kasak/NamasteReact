@@ -6,18 +6,27 @@ class UserClass extends React.Component {
         super(props)
         this.state={
           count:0,
-          count2:2,
         }
+        console.log("child constructor");
     }
+    componentDidMount(){
+      console.log("child didmount")
+  }
   render() {
-    const {count2}=this.state;
     return (
+      
       <div>
         <h2>{this.props.name}</h2>
         <h3>count={this.state.count}</h3>
-        <h3>{count2}</h3>
+        <button onClick={()=>{
+          this.setState(
+            {count:this.state.count+1,}
+          );
+        }}>count Increaee</button>
+
         <h2> location: frz</h2>
         <h3>comp: CSG</h3>
+        {console.log("child render")}
       </div>
     );
   }
