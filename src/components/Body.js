@@ -43,7 +43,7 @@ const Body = () => {
     <ShimmerUI />
   ) : (
     <div className="body">
-      <div className="border-black-2px">
+      <div className="border-pink-2px">
         <input
           type="text"
           value={searchText}
