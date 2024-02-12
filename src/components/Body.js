@@ -43,10 +43,9 @@ const Body = () => {
     <ShimmerUI />
   ) : (
     <div className="body">
-      <div className="searchBox">
+      <div className="border-black-2px">
         <input
           type="text"
-          className="search-input-box"
           value={searchText}
           onChange={(e) => {
             setsearchText(e.target.value);
